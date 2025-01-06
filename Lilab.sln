@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lilab.Api", "Lilab.Api\Lilab.Api.csproj", "{8C48AB4C-1AEF-4B77-A20C-1CC8589AD83E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F7B6BDE2-25E1-48E0-A43A-A56725A1C1FE}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lilab.Data", "Lilab.Data\Lilab.Data.csproj", "{192A634F-4F81-4EE6-B727-7CFAA46A3782}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lilab.Service", "Lilab.Service\Lilab.Service.csproj", "{724A2AB6-E09F-4088-90DF-6360198CB59E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C48AB4C-1AEF-4B77-A20C-1CC8589AD83E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C48AB4C-1AEF-4B77-A20C-1CC8589AD83E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C48AB4C-1AEF-4B77-A20C-1CC8589AD83E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C48AB4C-1AEF-4B77-A20C-1CC8589AD83E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{192A634F-4F81-4EE6-B727-7CFAA46A3782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{192A634F-4F81-4EE6-B727-7CFAA46A3782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{192A634F-4F81-4EE6-B727-7CFAA46A3782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{192A634F-4F81-4EE6-B727-7CFAA46A3782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{724A2AB6-E09F-4088-90DF-6360198CB59E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{724A2AB6-E09F-4088-90DF-6360198CB59E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{724A2AB6-E09F-4088-90DF-6360198CB59E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{724A2AB6-E09F-4088-90DF-6360198CB59E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

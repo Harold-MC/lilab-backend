@@ -1,0 +1,12 @@
+﻿services:
+  lilab.api:
+    image: lilab.api
+    build:
+      context: .
+      dockerfile: Lilab.Api/Dockerfile
+
+  lilab.managers:
+    image: lilab.managers
+    build:
+      context: .
+      dockerfile: Lilab.Managers/Dockerfile
