@@ -192,6 +192,14 @@ namespace Lilab.Data.Migrations
                 });
             
             migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "Name", "Email", "IsActive", "Password", "CreatedAt" },
+                values: new object[,]
+                {
+                    { "5d28c42a-beba-4a2f-bbb7-ae07aab3a921", "User Test", "haroldcordero64@gmail.com", true, "10000.1bRdUHBU9BRdhoCWHMrR4g==.5eclPHM+8HdaPgvT6Iwjj9pVTeL/0uetyqJ23lkMxP8=", DateTime.Now },
+                });
+            
+            migrationBuilder.InsertData(
                 table: "PermissionRole",
                 columns: new[] { "RolesId", "PermissionsId" },
                 values: new object[,]
