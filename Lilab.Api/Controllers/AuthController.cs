@@ -13,7 +13,7 @@ namespace Lilab.Api.Controllers
     {
         private readonly IAuthService _authService;
         
-        public AuthController(IAuthService authService, PasswordHasher passwordHasher)
+        public AuthController(IAuthService authService)
         {
             _authService = authService;
         }

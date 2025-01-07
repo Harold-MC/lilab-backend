@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Lilab.Api.Controllers
 {
-    [Authorize]
     [Route("api/users")]
     [ApiController]
     public class UserController : ControllerBase
@@ -27,9 +26,9 @@ namespace Lilab.Api.Controllers
         }
         
         [HttpPost]
-        public async Task<ActionResult<User>> Create([FromBody] User user)
+        public async Task<ActionResult<User>> Create([FromBody] CreateUserViewModel model)
         {
-            var data = await _userService.CreateAsync(user);
+            var data = await _userService.CreateAsync(model.User, model.Password);
             return Ok(data);
         }
         
@@ -37,6 +36,13 @@ namespace Lilab.Api.Controllers
         public async Task<ActionResult<User>> Update([FromBody] User user)
         {
             var data = await _userService.UpdateAsync(user);
+            return Ok(data);
+        }
+        
+        [HttpDelete("{userId}")]
+        public async Task<ActionResult<bool>> Delete(Guid userId)
+        {
+            var data = await _userService.RemoveAsync(userId);
             return Ok(data);
         }
         

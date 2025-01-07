@@ -19,8 +19,7 @@ namespace Lilab.Data.Migrations
                 name: "Customers",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     Name = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Email = table.Column<string>(type: "longtext", nullable: false)
@@ -78,7 +77,7 @@ namespace Lilab.Data.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Date = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    CustomerId = table.Column<long>(type: "bigint", nullable: false),
+                    CustomerId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     Type = table.Column<int>(type: "int", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     UpdateAt = table.Column<DateTime>(type: "datetime(6)", nullable: true)
@@ -162,6 +161,57 @@ namespace Lilab.Data.Migrations
                 name: "IX_Users_RoleId",
                 table: "Users",
                 column: "RoleId");
+            
+            migrationBuilder.InsertData(
+                table: "Permissions",
+                columns: new[] { "Id", "Name", "CreatedAt" },
+                values: new object[,]
+                {
+                    { 1, "users.view", DateTime.Now },
+                    { 2, "users.delete", DateTime.Now },
+                    { 3, "users.edit", DateTime.Now },
+                    { 4, "users.create", DateTime.Now },
+                    
+                    { 4, "customers.view", DateTime.Now },
+                    { 5, "customers.delete", DateTime.Now },
+                    { 6, "customers.edit", DateTime.Now },
+                    { 7, "customers.create", DateTime.Now },
+                    
+                    { 8, "access.view", DateTime.Now },
+                    { 9, "access.create", DateTime.Now },
+                    
+                });
+            
+            migrationBuilder.InsertData(
+                table: "Roles",
+                columns: new[] { "Id", "Name", "CreatedAt" },
+                values: new object[,]
+                {
+                    { 1, "Admin", DateTime.Now },
+                    { 2, "Personal Autorizado", DateTime.Now },
+                });
+            
+            migrationBuilder.InsertData(
+                table: "PermissionRole",
+                columns: new[] { "RolesId", "PermissionsId" },
+                values: new object[,]
+                {
+                    { 1, 1 },
+                    { 1, 2 },
+                    { 1, 3 },
+                    { 1, 4 },
+                    { 1, 5 },
+                    { 1, 6 },
+                    { 1, 7 },
+                    { 1, 8 },
+                    { 1, 9 },
+                    
+                    { 2, 5 },
+                    { 2, 6 },
+                    { 2, 7 },
+                    { 2, 8 },
+                    { 2, 9 },
+                });
         }
 
         /// <inheritdoc />

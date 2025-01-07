@@ -28,7 +28,7 @@ public class MvcInstaller : IInstaller
                 ValidIssuer = configuration["Jwt:Issuer"],
                 ValidAudience = configuration["Jwt:Audience"],
                 IssuerSigningKey = new SymmetricSecurityKey
-                    (Encoding.UTF8.GetBytes(configuration["Jwt:SecretKey"] ?? string.Empty)),
+                    (Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("JWT_SECRET_KEY") ?? string.Empty)),
                 ValidateIssuer = true,
                 ValidateAudience = true,
                 ValidateLifetime = false,

@@ -41,7 +41,6 @@ public class ServiceInstaller : IInstaller
             cfg.AddProfile(new AutoMapperProfileConfiguration());
         });
         
-
         var mapper = config.CreateMapper();
         services.AddSingleton(mapper);
     }

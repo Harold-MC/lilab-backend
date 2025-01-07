@@ -9,6 +9,8 @@ namespace Lilab.Data.Contract
         where T : class, new()
     {
         T Add(T entity);
+        void MarkAsModified(T entity);
+        void Attach(T entity);
 
         Task<T> AddAsync(T entity);
 

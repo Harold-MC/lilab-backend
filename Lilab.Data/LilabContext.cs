@@ -47,7 +47,7 @@ namespace Lilab.Data
 							break;
 						case EntityState.Modified:
 							entry.State = EntityState.Modified;
-							entry.CurrentValues["UpdatedAt"] = DateTime.Now;
+							entry.CurrentValues["UpdateAt"] = DateTime.Now;
 							break;
 					}
 				}

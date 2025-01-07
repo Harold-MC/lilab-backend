@@ -12,6 +12,6 @@ public class AutoMapperProfileConfiguration : Profile
     AutoMapperProfileConfiguration(string profileName)
         : base(profileName)
     {
-        CreateMap<User, CreateUserViewModel>();
+        CreateMap<CreateUserViewModel, User>();
     }
 }

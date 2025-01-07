@@ -17,6 +17,19 @@ namespace Lilab.Data.Repository
             _Context = context;
             _DbSet = _Context.Set<TEntity>();
         }
+        
+        public virtual void MarkAsModified(TEntity entity)
+        {
+            _DbSet.Attach(entity);
+            _Context.Entry(entity).State = EntityState.Modified;
+
+            _Context.SaveChanges();
+        }
+        
+        public virtual void Attach(TEntity entity)
+        {
+            _DbSet.Attach(entity);
+        }
 
         public virtual TEntity Add(TEntity entity)
         {
